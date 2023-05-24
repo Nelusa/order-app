@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
-import classes from "./Cart.module.css";
+import styles from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout/Checkout";
 
@@ -53,7 +53,7 @@ const Cart = (props) => {
   };
 
   const cartItems = (
-    <ul className={classes["cart-items"]}>
+    <ul className={styles["cart-items"]}>
       {cartCtx.items.map((item) => (
         <CartItem
           key={item.id}
@@ -68,12 +68,12 @@ const Cart = (props) => {
   );
 
   const modalActions = (
-    <div className={classes.actions}>
-      <button className={classes["button--alt"]} onClick={props.onClose}>
+    <div className={styles.actions}>
+      <button className={styles["button--alt"]} onClick={props.onClose}>
         Close
       </button>
       {hasItems && (
-        <button className={classes.button} onClick={handleOrder}>
+        <button className={styles.button} onClick={handleOrder}>
           Order
         </button>
       )}
@@ -83,7 +83,7 @@ const Cart = (props) => {
   const cartModalContent = (
     <>
       {cartItems}
-      <div className={classes.total}>
+      <div className={styles.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
@@ -99,8 +99,8 @@ const Cart = (props) => {
   const didSubmitModalContent = (
     <>
       <p>Successfully sent the order!</p>
-      <div className={classes.actions}>
-        <button className={classes.button} onClick={props.onClose}>
+      <div className={styles.actions}>
+        <button className={styles.button} onClick={props.onClose}>
           Close
         </button>
       </div>

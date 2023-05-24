@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import classes from "./Checkout.module.css";
+import styles from "./Checkout.module.css";
 
 const isEmpty = (value) => value.trim() === "";
 const isFiveChars = (value) => value.trim().length === 5;
@@ -59,10 +59,10 @@ const Checkout = ({ onCancel, onConfirm }) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={handleConfirm}>
+    <form className={styles.form} onSubmit={handleConfirm}>
       <div
-        className={`${classes.control} ${
-          formInputsValidity.name ? "" : classes.invalid
+        className={`${styles.control} ${
+          formInputsValidity.name ? "" : styles.invalid
         }`}
       >
         <label htmlFor="name">Your Name</label>
@@ -70,8 +70,8 @@ const Checkout = ({ onCancel, onConfirm }) => {
         {!formInputsValidity.name && <p>Please enter a valid name!</p>}
       </div>
       <div
-        className={`${classes.control} ${
-          formInputsValidity.street ? "" : classes.invalid
+        className={`${styles.control} ${
+          formInputsValidity.street ? "" : styles.invalid
         }`}
       >
         <label htmlFor="street">Street</label>
@@ -79,8 +79,8 @@ const Checkout = ({ onCancel, onConfirm }) => {
         {!formInputsValidity.street && <p>Please enter a valid street!</p>}
       </div>
       <div
-        className={`${classes.control} ${
-          formInputsValidity.postalCode ? "" : classes.invalid
+        className={`${styles.control} ${
+          formInputsValidity.postalCode ? "" : styles.invalid
         }`}
       >
         <label htmlFor="postal">Postal Code</label>
@@ -90,19 +90,19 @@ const Checkout = ({ onCancel, onConfirm }) => {
         )}
       </div>
       <div
-        className={`${classes.control} ${
-          formInputsValidity.city ? "" : classes.invalid
+        className={`${styles.control} ${
+          formInputsValidity.city ? "" : styles.invalid
         }`}
       >
         <label htmlFor="city">City</label>
         <input type="text" id="city" ref={cityInputRef} />
         {!formInputsValidity.city && <p>Please enter a valid city!</p>}
       </div>
-      <div className={classes.actions}>
+      <div className={styles.actions}>
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
-        <button className={classes.submit}>Confirm</button>
+        <button className={styles.submit}>Confirm</button>
       </div>
     </form>
   );
